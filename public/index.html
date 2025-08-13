@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Revolt Live (Gemini)</title>
+  <link rel="preconnect" href="/" />
+  <style>
+    :root { font-family: ui-sans-serif, system-ui; }
+    body { display:grid; place-items:center; min-height:100dvh; background:#0b0c10; color:#e5e7eb; }
+    .app { width:min(900px, 96vw); padding:24px; border-radius:16px; background:#111317; box-shadow: 0 10px 24px rgba(0,0,0,.4); }
+    h1 { margin:0 0 8px; font-size:26px; }
+    .sub { color:#94a3b8; margin-bottom:16px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    button { padding:10px 14px; border:0; border-radius:12px; cursor:pointer; color:#0b0c10; background:#60a5fa; font-weight:600; }
+    button.secondary { background:#d1d5db; }
+    button.danger { background:#fda4af; }
+    .pill { font-size:12px; color:#94a3b8; }
+    .log { margin-top:16px; height:180px; overflow:auto; background:#0f1115; border-radius:12px; padding:12px; font-size:13px; }
+    .bad { color:#fca5a5; }
+    .ok { color:#a7f3d0; }
+    .stt { margin-top:12px; color:#cbd5e1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; }
+    input[type=text] { flex:1; padding:10px 12px; border-radius:10px; border:1px solid #1f2937; background:#0f1115; color:#e5e7eb; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Rev (Revolt Motors)</h1>
+    <div class="sub">Real-time voice chat using Gemini Live API (server-to-server).</div>
+
+    <div class="row">
+      <button id="connect">Connect</button>
+      <button id="stop" class="secondary" disabled>⏹️ Stop</button>
+      <span id="status" class="pill">disconnected</span>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+      <input id="text" type="text" placeholder="(Optional) Type a message and press Enter" disabled />
+    </div>
+
+    <div id="stt" class="stt"></div>
+    <div id="log" class="log"></div>
+  </div>
+
+  <script type="module" src="./client.js"></script>
+</body>
+</html>
